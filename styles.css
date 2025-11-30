@@ -1,0 +1,271 @@
+:root {
+    --garden-green: #4CAF50; /* Primary action color */
+    --stone-gray: #424242;
+    --gold-yellow: #FFD700; /* Accent for Poiēma/Light */
+    --pure-white: #FFFFFF;
+    --light-bg: #F5F5F5;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    padding-bottom: 70px; /* Space for fixed navigation */
+    color: var(--stone-gray);
+}
+
+/* --- Header and Logo --- */
+#app-header {
+    background: linear-gradient(135deg, var(--garden-green) 0%, #388E3C 100%);
+    color: var(--pure-white);
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 0.9em;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.logo-fence {
+    color: var(--gold-yellow);
+    font-size: 0.8em;
+}
+.logo-garden {
+    color: var(--pure-white);
+}
+
+/* --- Main Content and Sections --- */
+#content-container {
+    padding: 0 15px;
+}
+
+.content-section {
+    display: none;
+    padding-bottom: 20px;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* --- Cards and UI Components --- */
+.card, .tracker-card, .feature-card {
+    background-color: var(--pure-white);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.card h3, .feature-card h3 {
+    color: var(--garden-green);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 5px;
+}
+
+/* Dashboard Specifics */
+.affirmation-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.affirmation-header h2 {
+    color: var(--stone-gray);
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+.poiema-verse {
+    font-style: italic;
+    color: var(--stone-gray);
+    opacity: 0.7;
+}
+
+.tracker-card {
+    text-align: center;
+}
+#progress-status {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.progress-bar-container {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    height: 15px;
+    overflow: hidden;
+}
+#progress-bar {
+    height: 100%;
+    background-color: var(--gold-yellow);
+    transition: width 0.5s ease-in-out;
+}
+
+.check-in button {
+    background-color: var(--garden-green);
+    color: var(--pure-white);
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.check-in button:hover {
+    background-color: #388E3C;
+}
+
+/* Daily Praxis Specifics */
+#daily-title {
+    color: var(--stone-gray);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+#daily-quote {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--garden-green);
+}
+.challenge-point h3 {
+    color: #E67E22; /* Orange accent */
+}
+.reflection-journal textarea {
+    width: 100%;
+    border: 1px solid var(--light-bg);
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+    resize: vertical;
+}
+.reflection-journal button {
+    background-color: var(--stone-gray);
+    color: var(--pure-white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.save-status {
+    font-size: 0.8em;
+    color: var(--garden-green);
+    margin-top: 5px;
+}
+.prayer-prompt {
+    font-style: italic;
+    border-left: 5px solid var(--gold-yellow);
+}
+
+/* Journey Map Specifics (Accordion) */
+.week-header {
+    background-color: var(--stone-gray);
+    color: var(--pure-white);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.week-content {
+    background-color: var(--pure-white);
+    border: 1px solid var(--light-bg);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.week-content.expanded {
+    padding: 15px;
+    max-height: 500px; /* Adjust based on expected content size */
+}
+
+.week-content p {
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--light-bg);
+    font-size: 0.9em;
+}
+
+.review-card {
+    text-align: center;
+}
+
+/* Resources Specifics (Glossary) */
+.glossary {
+    padding: 10px 0;
+}
+.glossary dt {
+    font-weight: bold;
+    color: var(--garden-green);
+    margin-top: 10px;
+}
+.glossary dd {
+    margin-left: 10px;
+    font-size: 0.9em;
+    border-left: 2px solid var(--gold-yellow);
+    padding-left: 5px;
+}
+
+/* --- Fixed Navigation Menu --- */
+#nav-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--stone-gray);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+    z-index: 1000;
+}
+
+#nav-menu button {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    color: var(--pure-white);
+    padding: 10px 5px;
+    font-size: 0.7em;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nav-menu button:hover,
+#nav-menu button.active {
+    background-color: var(--garden-green);
+}
+
+li{
+    margin-left: 30px;
+}
